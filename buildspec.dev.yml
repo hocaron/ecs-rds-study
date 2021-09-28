@@ -39,7 +39,7 @@ phases:
     commands:
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
-      - "docker-compose -f docker-compose.yml push"
+      - "docker-compose -f docker-compose.dev.yml push"
 # CodeBuild가 빌드 출력을 찾을 수 있는 위치 및 CodeBuild가 Amazon S3 출력 버킷에 업로드하기 위해 빌드 출력을 준비하는 방식에 대한 정보를 나타냅니다.
 artifacts:
   # 빌드 환경의 빌드 출력 결과물을 포함하는 위치를 나타냅니다.
