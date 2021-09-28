@@ -1,7 +1,6 @@
 FROM node:14.16.0-alpine3.11 as builder
 WORKDIR /app
 COPY ./package*.json ./
-COPY ./yarn.lock ./
 COPY ./tsconfig.json ./
 RUN npm install
 COPY . .
