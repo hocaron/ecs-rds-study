@@ -1,21 +1,18 @@
-version: 0.1
-phases:
-  pre_build:
-    commands:
-      - "echo Logging in to Docker Hub..."
-      - 'docker login --username="ssunnu" --password="testtesttest"'
-      build:
-        commands:
-          - "echo Build started on `date`"
-          - "echo Building the Docker image..."
-          - "docker-compose -f docker-compose.dev.yml build"
-          post_build:
-            commands:
-              - "echo Build completed on `date`"
-              - "echo Pushing the Docker image..."
-              - "docker-compose -f docker-compose.yml push"
-              artifacts:
-                files:
-                  - "appspec.yml"
-                  - "scripts/*"
-                  - "docker-compose.yml"
+version: 0.0
+os: linux
+files:
+- source: /
+destination: /deploy
+hooks:
+AfterInstall:
+- location: scripts/pullDocker.sh
+timeout: 120
+runas: ec2-user
+ApplicationStart:
+- location: scripts/runDocker.sh
+timeout: 60
+runas: ec2-user
+ApplicationStop:
+- location: scripts/stopDocker.sh
+timeout: 60
+runas: ec2-user

@@ -3,7 +3,7 @@ docker login -u ssunnu -p testtesttest
 if [ "$DEPLOYMENT_GROUP_NAME" == "dev" ]
 then
 docker-compose -f /deploy/docker-compose.dev.yml pull
-elif [ "$DEPLOYMENT_GROUP_NAME" == "code-deploy-g" ]
+elif [ "$DEPLOYMENT_GROUP_NAME" == "helltabus-codedeploy" ]
 then
 docker-compose -f /deploy/docker-compose.stage.yml pull
 elif [ "$DEPLOYMENT_GROUP_NAME" == "production" ]
