@@ -1,4 +1,4 @@
-	version: 0.1
+version: 0.1
 phases:
 pre_build:
 commands:
@@ -8,7 +8,7 @@ build:
 commands:
 - "echo Build started on `date`"
 - "echo Building the Docker image..."
-- "docker-compose -f docker-compose.dev.yml build"
+- "docker-compose -f docker-compose.yml build"
 post_build:
 commands:
 - "echo Build completed on `date`"
@@ -18,4 +18,4 @@ artifacts:
 files:
 - "appspec.yml"
 - "scripts/*"
-- "docker-compose.dev.yml"
+- "docker-compose.yml"
