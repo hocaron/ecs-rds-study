@@ -11,4 +11,4 @@ then
 docker-compose -f /deploy/docker-compose.stage.yml rm -v
 # build images and run containers
 docker-compose -f /deploy/docker-compose.stage.yml up --detach --renew-anon-volumes
-
+fi 
