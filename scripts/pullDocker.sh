@@ -1,6 +1,6 @@
 docker login -u ssunnu -p testtesttest
 # pull docker image
-if [ "$DEPLOYMENT_GROUP_NAME" == "dev" ]
+if [ "$DEPLOYMENT_GROUP_NAME" == "helltabus-codedeploy" ]
 then
 docker-compose -f /deploy/docker-compose.dev.yml pull
 elif [ "$DEPLOYMENT_GROUP_NAME" == "helltabus-codedeploy" ]

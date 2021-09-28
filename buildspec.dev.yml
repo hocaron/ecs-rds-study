@@ -18,4 +18,4 @@ phases:
                 files:
                   - "appspec.yml"
                   - "scripts/*"
-                  - "docker-compose.yml"
+                  - "docker-compose.dev.yml"
