@@ -5,7 +5,7 @@ services:
     restart: always
     image: helltabus # goes to your repository on Docker Hub
     build:
-    dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.dev
     context: .
     container_name: "app"
     volumes:
