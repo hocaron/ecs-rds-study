@@ -1,18 +1,19 @@
+#/appspec.yml
 version: 0.0
 os: linux
 files:
-- source: /
-destination: /home/ec2-user/app
+  - source: /
+    destination: /deploy
 hooks:
-AfterInstall:
-- location: scripts/pullDocker.sh
-timeout: 120
-runas: ec2-user
-ApplicationStart:
-- location: scripts/runDocker.sh
-timeout: 60
-runas: ec2-user
-ApplicationStop:
-- location: scripts/stopDocker.sh
-timeout: 60
-runas: ec2-user
+  AfterInstall:
+    - location: scripts/pullDocker.sh
+      timeout: 120
+      runas: ec2-user
+  ApplicationStart:
+    - location: scripts/runDocker.sh
+      timeout: 60
+      runas: ec2-user
+  ApplicationStop:
+    - location: scripts/stopDocker.sh
+      timeout: 60
+      runas: ec2-user
