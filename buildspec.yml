@@ -10,6 +10,7 @@ phases:
     commands:
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
+      - "pwd"
       - "docker-compose -f docker-compose.dev.yml build"
   # 빌드 후에 CodeBuild가 실행하는 명령을 나타냅니다(있는 경우). 예를 들어, Maven을 사용하여 빌드 결과물을 JAR 또는 WAR 파일에 패키지할 수 있으며, Amazon ECR에 Docker 이미지를 푸시할 수도 있습니다.
   post_build:
