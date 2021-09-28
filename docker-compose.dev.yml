@@ -3,7 +3,7 @@ version: "3"
 services:
 app:
 restart: always
-image: ssunnu/helltabus # goes to your repository on Docker Hub
+image: helltabus # goes to your repository on Docker Hub
 build:
 dockerfile: Dockerfile.dev
 context: .
@@ -12,8 +12,6 @@ volumes:
 - node_modules:/app/node_modules
 ports:
 - "5000:5000"
-volumes:
-node_modules:
 
 
   # db:
