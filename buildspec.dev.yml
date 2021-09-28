@@ -1,0 +1,21 @@
+	version: 0.1
+phases:
+pre_build:
+commands:
+- "echo Logging in to Docker Hub..."
+- 'docker login --username=DOCKERHUB_USERNAME --password="DOCKERHUB_PASSWORD"'
+build:
+commands:
+- "echo Build started on `date`"
+- "echo Building the Docker image..."
+- "docker-compose -f docker-compose.dev.yml build"
+post_build:
+commands:
+- "echo Build completed on `date`"
+- "echo Pushing the Docker image..."
+- "docker-compose -f docker-compose.dev.yml push"
+artifacts:
+files:
+- "appspec.yml"
+- "scripts/*"
+- "docker-compose.dev.yml"
