@@ -1,42 +1,18 @@
-
-# files:
-#   - source: /
-#     destination: /home/ec2-user/app
-# hooks:
-# AfterInstall:
-# - location: scripts/pullDocker.sh
-# timeout: 120
-# runas: ec2-user
-# ApplicationStart:
-# - location: scripts/runDocker.sh
-# timeout: 60
-# runas: ec2-user
-# ApplicationStop:
-# - location: scripts/stopDocker.sh
-# timeout: 60
-# runas: ec2-user
-
 version: 0.0
-# Specify "os: linux" if this revision targets Amazon Linux or Ubuntu Server
-#   instances.
-# Specify "os: windows" if this revision targets Windows Server instances.
-# (You cannot specify both "os: linux" and "os: windows".)
 os: linux
 files:
-  - source: /
-    destination: /home/ec2-user/app
+- source: /
+destination: /home/ec2-user/app
 hooks:
-  AfterInstall:
-    - location: scripts/pullDocker.sh
-      timeout: 300
-      runas: ec2-user
-
-  ApplicationStart:
-    - location: scripts/runDocker.sh
-      timeout: 300
-      runas: ec2-user
-
-  ApplicationStop:
-    - location: scripts/stopDocker.sh
-      timeout: 300
-      runas: ec2-user
+AfterInstall:
+- location: scripts/pullDocker.sh
+timeout: 120
+runas: ec2-user
+ApplicationStart:
+- location: scripts/runDocker.sh
+timeout: 60
+runas: ec2-user
+ApplicationStop:
+- location: scripts/stopDocker.sh
+timeout: 60
+runas: ec2-user
