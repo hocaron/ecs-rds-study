@@ -9,6 +9,7 @@ phases:
     commands:
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
+      - "ls"
       - "docker-compose -f docker-compose.dev.yml build"
   post_build:
     commands:
