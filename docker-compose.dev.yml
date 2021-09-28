@@ -2,7 +2,7 @@ version: "3"
 services:
   app:
     restart: always
-    image: helltabus # goes to your repository on Docker Hub
+    image: ssunnu/helltabus # goes to your repository on Docker Hub
     build:
       dockerfile: Dockerfile.dev
       context: .
