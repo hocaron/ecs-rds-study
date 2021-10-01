@@ -1,7 +1,7 @@
 FROM node:14.16.0-alpine3.11 as builder
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json ./
 COPY ./tsconfig.json ./
 
 RUN npm install
@@ -22,6 +22,7 @@ WORKDIR /app
 COPY --from=builder "/app/dist/" "/app/dist/"
 COPY --from=builder "/app/node_modules/" "/app/node_modules/"
 COPY --from=builder "/app/package.json" "/app/package.json"
+
 
 EXPOSE 3000
 CMD ["npm", "run", "start"]

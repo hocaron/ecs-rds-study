@@ -17,16 +17,4 @@ phases:
 
 artifacts:
   files:
-    - 'appspec.yml'
-    - 'scripts/*'
-    - 'docker-compose.yml'
-    - 'Dockerfile'
-    - 'dist/*'
-    - 'node_modules/*'
-    - 'package.json'
-    - 'package-lock.json'
-    - 'buildspec.dev.yml'
-    - 'nest-cli.json'
-    - 'tsconfig.build.json'
-    - 'tsconfig.json'
-    - 'src/*'
+    - '**/*'
