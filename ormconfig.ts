@@ -3,7 +3,7 @@ import * as path from 'path';
 
 const config: TypeOrmModuleOptions = {
   type: 'mysql',
-  host: 'localhost',
+  host: 'helltabus-rds.cgqb4egt4onk.ap-northeast-2.rds.amazonaws.com',
   port: 3306,
   username: 'root',
   password: 'rootroot',
