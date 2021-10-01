@@ -6,7 +6,7 @@ const config: TypeOrmModuleOptions = {
   host: 'localhost',
   port: 3306,
   username: 'root',
-  password: 'root',
+  password: 'rootroot',
   database: 'hell_ta_bus',
   entities: [path.join(__dirname, '**/*.entity{.ts,.js}')],
   migrations: [__dirname + '/src/migrations/*.ts'],
